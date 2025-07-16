@@ -3,6 +3,7 @@
   projects:
     - name: Trauer-Spiel
       description: Narratives Game über die fünf Trauerphasen
+      year: 2222
       image: /assets/img/projects/trauer-thumb.png
       url: https://youtu.be/deinTrailer
 
@@ -10,5 +11,6 @@
   projects:
     - name: OpenGL-Engine
       description: Eigene 3D-Engine (C++, SDL2)
+      year: 2223
       image: /assets/img/projects/engine-thumb.png
       url: https://github.com/GeorgJuranek/Engine
