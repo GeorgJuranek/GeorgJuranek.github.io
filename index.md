@@ -1,5 +1,5 @@
 ---
-layout: portfolio  # Für 3-Spalten-Raster
+layout: portfolio
 title: ""
 ---
 
