@@ -3,6 +3,6 @@ layout: portfolio
 title: ""
 ---
 
-# Willkommen auf meinem Portfolio
+# Portfolio
 
 Hier findest du meine Projekte.
