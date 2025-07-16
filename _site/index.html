@@ -11,17 +11,45 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     }
+    /* Mobile: 1 Spalte unter 1000px Breite */
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1rem; /* Abstand zur Seite */
+      }
+
+      .card {
+        padding: 1rem;
+        }
+    }
+
     .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  background-color: black;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: black;
+        xtransition: transform 0.3s, background-image 0.3s;
+    }
+
+/* Hover nur auf Geräten mit Mauszeiger */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    background-image:     
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8)),
+    var(--hover-bg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    transform: scale(1.05);
+    border: none;
+  }
 }
 
-.card:hover {
-  background-image:     
+.card.active {
+    background-image:     
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8)),
     var(--hover-bg);
   background-size: cover;
@@ -42,6 +70,7 @@
     .leftAlign{text-align: left;}
     .noMargin{margin: 1px;}
     .fade{opacity: 0.5;}
+    .makeSpace{margin: 5rem 0 5rem 0;}
   </style>
 </head>
 <body>
@@ -51,6 +80,7 @@
 <p>Hier findest du meine Projekte.</p>
 
 
+  <div class = "makeSpace">
   
     <!--<h2>Games</h2>-->
     <div class="grid">
@@ -125,5 +155,43 @@
       
     </div>
   
+  </div>
+
 </body>
+<script>
+    if (window.innerWidth <= 1000) {
+      const cards = document.querySelectorAll('.card');
+  
+      function getClosestCardToCenter() {
+        let closestCard = null;
+        let minDistance = Infinity;
+        const centerY = window.innerHeight / 2;
+  
+        cards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const cardCenterY = rect.top + rect.height / 2;
+          const distance = Math.abs(centerY - cardCenterY);
+  
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestCard = card;
+          }
+        });
+  
+        // Nur eine Karte aktiv machen
+        cards.forEach(card => card.classList.remove('active'));
+        if (closestCard) {
+          closestCard.classList.add('active');
+        }
+      }
+  
+      // Beim Scrollen und Resizen prüfen
+      window.addEventListener('scroll', getClosestCardToCenter);
+      window.addEventListener('resize', getClosestCardToCenter);
+  
+      // Direkt initial prüfen
+      getClosestCardToCenter();
+    }
+  </script>
+  
 </html>
