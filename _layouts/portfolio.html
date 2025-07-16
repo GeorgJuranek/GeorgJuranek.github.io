@@ -31,7 +31,6 @@
     text-align: center;
     transition: all 0.3s ease;
     background-color: black;
-        xtransition: transform 0.3s, background-image 0.3s;
     }
 
 /* Hover nur auf Geräten mit Mauszeiger */
@@ -63,19 +62,43 @@
     
     .card a{display:inline-block;margin-top:.5rem;font-weight:italic;text-decoration:none;color:#0366d6;}
 
-    h1{font-size: 50px;}
+    h1{font-size: 50px;  
+        display: inline-block; transform: skewX(20deg) scaleX(1.8) scaleY(1.5) rotate(3deg) translateX(3rem);}}
     h3{font-size: 28px;}
     h4{font-size: 15px;}
-
+    
     .leftAlign{text-align: left;}
     .noMargin{margin: 1px;}
     .fade{opacity: 0.5;}
-    .makeSpace{margin: 5rem 0 5rem 0;}
+    .makeSpace{margin: 7rem 0 5rem 0;}
   </style>
 </head>
 <body>
-  <h1>{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
+
   {{ content }}
+
+  <hr />
+  
+  <h2 class="toggle-button" style="cursor:pointer;">Georg Juranek</h2>
+  <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+    <div style = "display: flex">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <img src="assets/img/projects/selfie1.png" alt="Beschreibung" style="width: auto; height: 30%; object-fit: cover; padding: 0 2rem 2rem;">
+    </div>
+</div>
+  <hr />
+  
+  <h3 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten</h3>
+  <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+    <div style = "display: flex">
+        <img src="assets/img/projects/digitalWorks-image.png" alt="Beschreibung" style="width: 60%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    </div></div>
+  <hr />
+  
+  
+  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
   <div class = "makeSpace">
   {% for category in site.data.projects %}
@@ -130,6 +153,18 @@
       // Direkt initial prüfen
       getClosestCardToCenter();
     }
+
+    /*Toggle*/
+    document.querySelectorAll('.toggle-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+      content.style.maxHeight = "0";
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
   </script>
   
 </html>
