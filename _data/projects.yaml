@@ -1,0 +1,9 @@
+- name: Trauer-Spiel
+  description: Narratives Game über die fünf Trauerphasen
+  image: /assets/img/projects/trauer/thumb.png
+  url: https://youtu.be/deinTrailer
+
+- name: OpenGL-Engine
+  description: Eigene 3D-Engine (C++, SDL2)
+  image: /assets/img/projects/engine/thumb.png
+  url: https://github.com/GeorgJuranek/Engine

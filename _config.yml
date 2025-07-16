@@ -1,0 +1,11 @@
+remote_theme: tedivm/jekyll-theme-portfolio
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+title: Georg Juranek
+author: Georg Juranek
+description: >
+  Game-Developer · C++-Enthusiast · Storyteller
+github_username: GeorgJuranek
