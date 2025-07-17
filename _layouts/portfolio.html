@@ -71,6 +71,13 @@
     .noMargin{margin: 1px;}
     .fade{opacity: 0.5;}
     .makeSpace{margin: 7rem 0 5rem 0;}
+
+    .grid-icon-container {
+      display: grid;
+      grid-auto-flow: column; /* füllt zuerst Spalten statt Zeilen */
+      grid-auto-rows: 1fr 1fr; /* genau 2 Zeilen */
+      gap: 10px;
+    }
   </style>
 </head>
 <body>
@@ -80,6 +87,7 @@
 
   <hr />
   
+  <!--Georg Juranek-->
   <h2 class="toggle-button" style="cursor:pointer;">Georg Juranek</h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <div style = "display: flex">
@@ -87,16 +95,44 @@
         <img src="assets/img/projects/selfie1.png" alt="Beschreibung" style="width: auto; height: 30%; object-fit: cover; padding: 0 2rem 2rem;">
     </div>
 </div>
+
   <hr />
   
+  <!--Digitale Arbeiten-->
   <h3 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten</h3>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-    <div style = "display: flex">
+    <div style = "display: flex;">
         <img src="assets/img/projects/digitalWorks-image.png" alt="Beschreibung" style="width: 60%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div></div>
+
   <hr />
   
+  <!--Kontakt-->
+    <h3 class="toggle-button" style="cursor:pointer;">Kontakt</h3>
+  <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+    <ul class="grid-icon-container" style="display: grid; align-items: baseline; flex-direction: column; list-style: none;" role="list">
+      <li>
+        <a href="https://linkedin.com/in/georg-juranek-4b4034300">
+          <img src="assets/img/socialMediaIcons/LinkedIn_icon.svg" alt="LinkedIn" style="width: 50%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
+          <!--<inline>LinkedIn</inline>-->
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/GeorgJuranek">
+          <img src="assets/img/socialMediaIcons/github-mark-white.svg" alt="GitHub" style="width: 50%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
+          <!--<inline>GitHub</inline>-->
+        </a>
+      </li>
+      <li>
+          <p style = "display: none;" id="email">georg_juranek@hotmail.de</p>
+          <button onclick="copyEmail()" style="all: unset; cursor: pointer;" role="button">
+            <img src="assets/img/socialMediaIcons/@icon.svg" alt="Email" style="width: 100%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
+          </button>
+      </li>
+    </ul>
+  </div>
+  <hr />
   
   <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
@@ -165,6 +201,17 @@
     }
   });
 });
+
+
+  /*Copy email*/
+    function copyEmail() {
+      const emailText = document.getElementById("email").innerText;
+      navigator.clipboard.writeText(emailText).then(() => {
+        alert("Email copied to clipboard! Write me ;)");
+      }).catch(err => {
+        alert("Error while copy email: " + err);
+      });
+    }
   </script>
   
 </html>
