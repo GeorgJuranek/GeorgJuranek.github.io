@@ -22,7 +22,7 @@
       image: /assets/img/projects/engine-thumb.png
       url: https://github.com/GeorgJuranek/Engine
 
-    - name: In Society
+    - name: Hedgehog's dilemma
       description: Eigene 3D-Engine (C++, SDL2)
       year: 2023-2024
       place: SAE Institute Hamburg      

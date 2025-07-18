@@ -17,7 +17,6 @@
       .grid {
         grid-template-columns: 1fr;
         gap: 3rem;
-        xpadding: 0 1rem; /* Abstand zur Seite */
         padding: 0 1.5rem; /* Abstand zur Seite */
       }
 
@@ -65,8 +64,11 @@
     .card a{display:inline-block;margin-top:.5rem;font-weight:italic;text-decoration:none;color:#0366d6;}
 
     h1{font-size: 50px;  
-        display: inline-block; transform: skewX(20deg) scaleX(1.8) scaleY(1.5) rotate(3deg) translateX(3rem);}}
-    h3{font-size: 28px;}
+        display: inline-block; transform: skewX(20deg) scaleX(1.8) scaleY(1.5) rotate(3deg) translateX(3rem);}
+    h2{font-size: 28px;
+        transform: skewX(-5deg)   ; margin: 2rem 1rem}
+    h3{font-size: 28px;
+        transform: skewX(-5deg) scaleX(1) scaleY(1.1) rotate(1deg) translateX(0rem);}
     h4{font-size: 15px;}
     
     .leftAlign{text-align: left;}
@@ -84,8 +86,8 @@
 </head>
 <body>
     <h1></h1>
-
-  <h1 id="portfolio">Portfolio</h1>
+    
+    <h1 id="portfolio">Portfolio</h1>
 <!-- 
 ---
 ## Georg Juranek
@@ -96,7 +98,7 @@
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Hier findest du meine Projekte. 
 -->
 
-
+    
   <hr />
   
   <!--Georg Juranek-->
@@ -108,22 +110,23 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
           In meinen Projekten hinterfrage ich Standards und suche nach neuen, unkonventionellen Wegen.
           Mein Schwerpunkt liegt auf 3D-Umgebungen, insbesondere mit der Unity Engine.
           Durch meinen ungewöhnlichen Werdegang bin ich offen dafür, ständig neue Kenntnisse zu erwerben und bestehende zu vertiefen.
+          <a href="assets/pdfs/Lebenslauf1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-block; padding: 1rem 1.5rem; color: white; background: rgba(155, 155, 155, 0.4); border-radius: 6px; text-decoration: none; margin: 3rem 1rem;">
+            📄 PDF öffnen
+          </a>
         </p>
         
         <img src="assets/img/projects/selfie1.png" alt="Beschreibung" style="width: auto; height: 30%; object-fit: cover; padding: 0 2rem 2rem;">
       </div>
 
-      <div style = "position: relative;">
-        <a href="assets/pdfs/Lebenslauf1.pdf" target="_blank" rel="noopener noreferrer" style="position: absolute; left: 2rem; bottom: 2rem;">
-          PDF öffnen
-        </a>
-      </div>
 </div>
 
   <hr />
   
   <!--Programmer/ Artist-->
-  <h3 class="toggle-button" style="cursor:pointer;">Programmer/ Artist</h3>
+  <h2 class="toggle-button" style="cursor:pointer;">Programmer/ Artist</h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <div style = "display: flex;">
         <img src="assets/img/projects/digitalWorks-image.png" alt="Beschreibung" style="width: 60%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
@@ -142,7 +145,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   <hr />
   
   <!--Kontakt-->
-    <h3 class="toggle-button" style="cursor:pointer;">Kontakt</h3>
+    <h2 class="toggle-button" style="cursor:pointer;">Kontakt</h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <ul class="grid-icon-container" style="display: grid; align-items: baseline; flex-direction: column; list-style: none;" role="list">
       <li>
@@ -170,11 +173,13 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   <!--Digitale Arbeiten
   <h3>Digitale Arbeiten</h3>-->
 
-  <h3 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten</h3>
+  <h2 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten</h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
 
   <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    In diesem Abschnitt finden Sie eine Auswahl meiner Arbeitsproben – überwiegend Projekte, die im Rahmen meines SAE-Studiums entstanden sind.
+    Aus rechtlichen Gründen enthalten die Repositories nur eigenen Code, keine externen Assets.
+    Weitere Informationen oder Verweise auf fertige Anwendungen finden Sie ggf. in den README-Dateien.
   </p>
 
   <div class = "makeSpace">
@@ -187,7 +192,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2025</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Narratives Game über die fünf Trauerphasen</p>
-            <img src="/assets/img/projects/trauer-thumb.png" alt="I Lost A Friend">
+            <a href="https://youtu.be/deinTrailer" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/trauer-thumb.png" alt="I Lost A Friend">
+            </a>
             <a href="https://youtu.be/deinTrailer" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
@@ -196,7 +203,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2023-2024</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            </a>
             <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
@@ -205,7 +214,20 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2023-2024</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="A Last Cigarette">
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="A Last Cigarette">
+            </a>
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
+        </div>
+      
+      <div class="card" style="--hover-bg: url('/assets/img/projects/engine-thumb.png');">
+            <h3 class = "leftAlign noMargin">Hedgehog's dilemma</h3>
+            <h4 class = "leftAlign noMargin">2023-2024</h4>
+            <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
+            <p>Eigene 3D-Engine (C++, SDL2)</p>
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="Hedgehog's dilemma">
+            </a>
             <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
@@ -214,7 +236,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2023-2024</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            </a>
             <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
@@ -223,7 +247,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2023-2024</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            </a>
             <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
@@ -232,16 +258,9 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
             <h4 class = "leftAlign noMargin">2023-2024</h4>
             <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
             <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
-            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
-        </div>
-      
-      <div class="card" style="--hover-bg: url('/assets/img/projects/engine-thumb.png');">
-            <h3 class = "leftAlign noMargin">In Society</h3>
-            <h4 class = "leftAlign noMargin">2023-2024</h4>
-            <h4 class = "leftAlign noMargin fade">SAE Institute Hamburg</h4>
-            <p>Eigene 3D-Engine (C++, SDL2)</p>
-            <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">
+              <img src="/assets/img/projects/engine-thumb.png" alt="In Society">
+            </a>
             <a href="https://github.com/GeorgJuranek/Engine" target="_blank" rel="noopener">Mehr erfahren</a>
         </div>
       
