@@ -66,7 +66,8 @@
     h1{font-size: 50px;  
         display: inline-block; transform: skewX(20deg) scaleX(1.8) scaleY(1.5) rotate(3deg) translateX(3rem);}
     h2{font-size: 28px;
-        transform: skewX(-5deg)   ; margin: 2rem 1rem}
+        transform: skewX(-5deg)   ; padding: 2rem 1rem; margin: 1rem 0;}
+    h2:active{transform: skew(-1deg); transform: scaleY(0.8) rotate(0); transition: all 0.2s ease;}
     h3{font-size: 28px;
         transform: skewX(-5deg) scaleX(1) scaleY(1.1) rotate(1deg) translateX(0rem);}
     h4{font-size: 15px;}
@@ -82,6 +83,8 @@
       grid-auto-rows: 1fr 1fr; /* genau 2 Zeilen */
       gap: 10px;
     }
+    
+    hr{padding: 0; margin: 0;}
   </style>
 </head>
 <body>
@@ -92,6 +95,7 @@
   <hr />
   
   <!--Georg Juranek-->
+
   <h2 class="toggle-button" style="cursor:pointer;">Georg Juranek</h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <div style = "display: flex">
