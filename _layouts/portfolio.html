@@ -178,7 +178,7 @@
 
   <div class = "makeSpace">
   {% for category in site.data.projects %}
-    <!--<h2>{{ category.name }}</h2>-->
+    <h3>{{ category.name }}</h3>
     <div class="grid">
       {% for project in category.projects %}
       <div class="card" style="--hover-bg: url('{{ project.image }}');">
