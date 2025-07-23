@@ -83,6 +83,28 @@
       grid-auto-rows: 1fr 1fr; /* genau 2 Zeilen */
       gap: 10px;
     }
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  xcolor: rgb(144, 144, 144);
+  xcolor: rgb(0, 0, 0);
+  color: white;
+  font-size: 1em;
+  xtransform: scaleX(1.8);
+  xpadding: 5px;
+  xborder: solid 2px;
+  xborder-radius: 50%;
+  xbackground-color: rgba(255, 255, 255, 0.114);
+  xtransform: rotate(0deg);
+  padding: 0 1rem;
+  display: inline-block;
+  transform: scale(0.55, 0.7);
+}
+.arrow.up {
+  transform: rotate(90deg); /* ▴ aus ▾ */
+  xcolor: rgb(86, 86, 86);
+}
     
     hr{padding: 0; margin: 0;}
   </style>
@@ -106,7 +128,13 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   
   <!--Georg Juranek-->
 
-  <h2 class="toggle-button" style="cursor:pointer;">Georg Juranek</h2>
+  <h2 class="toggle-button" style="cursor:pointer;">Georg Juranek   
+
+
+  <span class="arrow">&#10095;</span> <!-- ↓ --> 
+
+
+  </h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <div style = "display: flex">
         <p>
@@ -130,7 +158,11 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   <hr />
   
   <!--Programmer/ Artist-->
-  <h2 class="toggle-button" style="cursor:pointer;">Programmer/ Artist</h2>
+  <h2 class="toggle-button" style="cursor:pointer;">Programmer/ Artist 
+
+      <span class="arrow">&#10095;</span> <!-- ↓ --> 
+    
+  </h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <div style = "display: flex;">
         <img src="assets/img/projects/digitalWorks-image.png" alt="Beschreibung" style="width: 60%; height: auto; object-fit: cover; padding: 0 2rem 2rem;">
@@ -149,7 +181,11 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   <hr />
   
   <!--Kontakt-->
-    <h2 class="toggle-button" style="cursor:pointer;">Kontakt</h2>
+    <h2 class="toggle-button" style="cursor:pointer;">Kontakt 
+
+      <span class="arrow">&#10095;</span> <!-- ↓ --> 
+    
+  </h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
     <ul class="grid-icon-container" style="display: grid; align-items: baseline; flex-direction: column; list-style: none;" role="list">
       <li>
@@ -177,7 +213,11 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
   <!--Digitale Arbeiten
   <h3>Digitale Arbeiten</h3>-->
 
-  <h2 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten</h2>
+  <h2 class="toggle-button" style="cursor:pointer;">Digitale Arbeiten 
+
+      <span class="arrow">&#10095;</span> <!-- ↓ --> 
+    
+  </h2>
   <div class="content-toggle" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
 
   <p>
@@ -358,84 +398,83 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 </body>
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll(".toggle-button");
+    const contentToggles = document.querySelectorAll(".content-toggle");
+
+    toggleButtons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+        const content = contentToggles[index];
+        const arrow = button.querySelector(".arrow");
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+        if (isOpen) {
+          content.style.maxHeight = "0";
+          arrow.classList.remove("up");
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          arrow.classList.add("up");
+        }
+      });
+    });
+
+    // Ersten Abschnitt erst delay Sekunden nach Start automatisch öffnen
+    /*setTimeout(() => {
+      if (contentToggles.length > 0 && toggleButtons.length > 0) {
+        const firstContent = contentToggles[0];
+        const firstArrow = toggleButtons[0].querySelector(".arrow");
+        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+        firstArrow.classList.add("up");
+      }
+    }, 300); // 3000 ms = 3 Sekunden*/
+
+    // Warten, bis alles wirklich gerendert ist (optional, kannst du evtl. weglassen)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (contentToggles.length > 0) {
+          const content = contentToggles[0];
+          // Sollte schon durch das Timeout gesetzt sein, kann evtl. entfallen
+          // content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+
+    // Logik für kleine Bildschirme – aktivste Card hervorheben
     if (window.innerWidth <= 1000) {
       const cards = document.querySelectorAll('.card');
-  
+
       function getClosestCardToCenter() {
         let closestCard = null;
         let minDistance = Infinity;
         const centerY = window.innerHeight / 2;
-  
+
         cards.forEach(card => {
           const rect = card.getBoundingClientRect();
           const cardCenterY = rect.top + rect.height / 2;
           const distance = Math.abs(centerY - cardCenterY);
-  
+
           if (distance < minDistance) {
             minDistance = distance;
             closestCard = card;
           }
         });
-  
-        // Nur eine Karte aktiv machen
+
         cards.forEach(card => card.classList.remove('active'));
         if (closestCard) {
           closestCard.classList.add('active');
         }
       }
-  
-      // Beim Scrollen und Resizen prüfen
+
       window.addEventListener('scroll', getClosestCardToCenter);
       window.addEventListener('resize', getClosestCardToCenter);
-  
-      // Direkt initial prüfen
       getClosestCardToCenter();
     }
-
-    /*Toggle*/
-    document.querySelectorAll('.toggle-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const content = button.nextElementSibling;
-    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-      content.style.maxHeight = "0";
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
   });
-});
 
-
-  /*Copy email*/
-    function copyEmail() {
-      const emailText = document.getElementById("email").innerText;
-      navigator.clipboard.writeText(emailText).then(() => {
-        alert("Email copied to clipboard! Write me ;)");
-      }).catch(err => {
-        alert("Error while copy email: " + err);
-      });
-    }
-  </script>
-  
-</html>
-
-
-        <!--
-          <h3>Umfangreiche Kenntnisse:</h3>
-          <ul>
-            <li>Unity</li>
-            <li>C#</li>
-            <li>React</li>
-            <li>Javascript</li>
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>Figma</li>
-          </ul>
-
-          <h3>Grundlegende Kenntnisse:</h3>
-          <ul>
-            <li>Unreal Engine 5</li>
-            <li>C++</li>
-            <li>Touchdesigner</li>
-            <li>Blender</li>
-          </ul>
-        -->
+  function copyEmail() {
+    const email = document.getElementById("email").innerText;
+    navigator.clipboard.writeText(email).then(function () {
+      alert("E-Mail-Adresse kopiert: " + email);
+    });
+  }
+</script>
