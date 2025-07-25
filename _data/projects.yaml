@@ -1,57 +1,70 @@
 # _data/projects.yaml
-- name: Test            # ← Kategorie‑Überschrift (frei wählbar)
-  projects:
-    - name: I Lost A Friend
-      description: Narratives Game über die fünf Trauerphasen
-      year: 2025
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/trauer-thumb.png
-      url: https://youtu.be/deinTrailer
-
-    - name: In Society
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
-    - name: A Last Cigarette
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg      
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
-    - name: Hedgehog's dilemma
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg      
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
-    - name: In Society
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg      
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
-    - name: In Society
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg      
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
-    - name: In Society
-      description: Eigene 3D-Engine (C++, SDL2)
-      year: 2023-2024
-      place: SAE Institute Hamburg      
-      image: /assets/img/projects/engine-thumb.png
-      url: https://github.com/GeorgJuranek/Engine
-
+#- name: Test            # ← Kategorie‑Überschrift (frei wählbar)
+#  projects:
+#    - name: I Lost A Friend
+#      description: Narratives Game über die fünf Trauerphasen
+#      year: 2025
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/trauer-thumb.png
+#      url: https://youtu.be/deinTrailer
+#
+#    - name: In Society
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
+#
+#    - name: A Last Cigarette
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg      
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
+#
+#    - name: Hedgehog's dilemma
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg      
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
+#
+#    - name: In Society
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg      
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
+#
+#    - name: In Society
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg      
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
+#
+#    - name: In Society
+#      description: Eigene 3D-Engine (C++, SDL2)
+#      year: 2023-2024
+#      place: SAE Institute Hamburg      
+#      image: /assets/img/projects/engine-thumb.png
+#      url: https://github.com/GeorgJuranek/Engine
 - name: Unity
   projects:
+    - name: A Last Cigarette
+      description: First-Person Szene
+      year: 2023
+      place: SAE Institute Hamburg
+      image: /assets/img/projects/LastCigarette-thumb.png
+      url: https://github.com/GeorgJuranek/Simulation
+
+    - name: Hedgehog's dilemma
+      description: Interaktive Simulation eines Autobahn-Staus
+      year: 2023
+      place: SAE Institute Hamburg
+      image: /assets/img/projects/HedgehogsDilemma-thumb.png
+      url: https://github.com/GeorgJuranek/KI-Verhalten      
+
     - name: My Pigeon
       description: 2D Jump'n'Run Charactercontroller
       year: 2023
@@ -59,12 +72,12 @@
       image: /assets/img/projects/MyPigeon-thumb.png
       url: https://github.com/GeorgJuranek/2DJumpnRun
 
-    - name: 3D Charakter Steuerung
-      description: Blöcke platzieren in 3D
-      year: 2023
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/3CharacterSteuerung-thumb.png
-      url: https://github.com/GeorgJuranek/3DCharakterSteuerung    
+#    - name: 3D Charakter Steuerung
+#      description: Blöcke platzieren in 3D
+#      year: 2023
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/3CharacterSteuerung-thumb.png
+#      url: https://github.com/GeorgJuranek/3DCharakterSteuerung    
 
 - name: Web
   projects:
@@ -76,25 +89,25 @@
       url: https://github.com/GeorgJuranek/capstone-project
 
 
-- name: Konsolenprojekte
-  projects:
-    - name: Escape Room Poem
-      description: C# Raum mit Tür und Schlüssel
-      year: 2023
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/EscpeRoom-thumb.png
-      url: https://github.com/GeorgJuranek/EscapeRoom
-
-    - name: Monsterkampf-Simulator
-      description: C# Kampfsimulation
-      year: 2023
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/MonsterkampfSimulator-thumb.png
-      url: https://github.com/GeorgJuranek/Monsterkampf-Simulator  
-
-    - name: Sortier-Algorithmen
-      description: C# Anwendung zum verwenden verschiedener Sortieralgorithmen
-      year: 2023
-      place: SAE Institute Hamburg
-      image: /assets/img/projects/SortierAlgorithmen-thumb.png
-      url: https://github.com/GeorgJuranek/Sortier-Algorithmen          
+#- name: Konsolenprojekte
+#  projects:
+#    - name: Escape Room Poem
+#      description: C# Raum mit Tür und Schlüssel
+#      year: 2023
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/EscpeRoom-thumb.png
+#      url: https://github.com/GeorgJuranek/EscapeRoom
+#
+#    - name: Monsterkampf-Simulator
+#      description: C# Kampfsimulation
+#      year: 2023
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/MonsterkampfSimulator-thumb.png
+#      url: https://github.com/GeorgJuranek/Monsterkampf-Simulator  
+#
+#    - name: Sortier-Algorithmen
+#      description: C# Anwendung zum verwenden verschiedener Sortieralgorithmen
+#      year: 2023
+#      place: SAE Institute Hamburg
+#      image: /assets/img/projects/SortierAlgorithmen-thumb.png
+#      url: https://github.com/GeorgJuranek/Sortier-Algorithmen          
